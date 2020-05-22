@@ -30,7 +30,7 @@ for( count = 0 to count < V-1)
 	end for
 end for
 Return dist;
-functionminDistance( dist[],intsptSet[])
+function minDistance( dist[],int sptSet[])
 	int min = INT_MAX,
 	for ( v = 0 to v < V)
 	
@@ -38,23 +38,23 @@ functionminDistance( dist[],intsptSet[])
 			min = dist[v], min_index = v;
 			endif
 	end for
-returnmin_index;
+return min_index;
 
 
 4.1.2 Travelling Salesman Problem Pseudocode
 
 TSP using Dynamic Programming and Bitmasking
              VISITED_ALL =  power(2,N) – 1
-intdp[2^n][n]
+int dp[2^n][n]
               Function tsp( mask, curr_city )
      {	
 		if(mask==VISITED_ALL)
 		return distance[curr_city][source_city]
 	
 		if(dp[mask][pos]!=-1)
-		returndp[mask][pos]
+		return dp[mask][pos]
 	                //Now from current node, we will try to go to every other node and take the min ans
-		intans = INFINITY
+		int ans = INFINITY
 		//Visit all the unvisited cities and take the best route
 		for city = 0 to N-1:
 if((mask&(1<<city))==0)
@@ -65,7 +65,7 @@ newAns  =  distance[curr_city][city]  +  tsp( mask|(1<<city), city)
 End if
 End for
 	}
-	returndp[mask][pos] = ans;
+	return dp[mask][pos] = ans;
 } 
 
 
